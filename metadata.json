@@ -1,0 +1,8 @@
+{
+  "name": "Golden Mother",
+  "description": "Premium mobile-first ecommerce platform for Golden Mother Multi Global. Luxury design with real-time updates and professional admin dashboard.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}

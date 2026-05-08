@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --color-brand-orange: #F27D26;
+  --color-brand-orange-light: #FFB347;
+  --color-brand-dark: #050505;
+  --color-brand-gray: #0A0A0A;
+  --color-surface: #111111;
+  --color-surface-hover: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-white font-sans antialiased selection:bg-brand-orange selection:text-black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-brand-gray/80 backdrop-blur-2xl border border-white/5;
+  }
+
+  .btn-primary {
+    @apply bg-brand-orange text-black font-bold py-3 px-6 rounded-xl hover:bg-brand-orange-light transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none shadow-lg shadow-brand-orange/10;
+  }
+
+  .btn-outline {
+    @apply border border-white/10 text-white font-semibold py-3 px-6 rounded-xl hover:bg-white/5 transition-all active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full bg-surface border border-white/10 rounded-xl p-3 text-sm focus:outline-none focus:border-brand-orange transition-colors placeholder:text-gray-600;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
